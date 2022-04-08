@@ -1,13 +1,15 @@
 package com.example.deployment;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
-@RestController
+
+@Controller
 public class MainController {
-    @RequestMapping("/")
-    public String home() {
-        return "Look Ma, no Localhost!";
+    @GetMapping(value = "/") //http:localhost:8000/
+    public String home(Model model) {
+        return "index";
     }
 
 }
